@@ -1,0 +1,213 @@
+# Cria um vetor vazio
+vetor = []
+
+# Lê 10 valores inteiros do usuário
+for i in range(10):
+    numero = int(input(f"Digite o {i+1}º número inteiro: "))
+    vetor.append(numero)
+
+# Exibe o conteúdo do vetor
+print("--------------------------")
+print("Conteúdo do vetor:")
+for i in range(10):
+    print(f"Posição {i}: {vetor[i]}")
+
+
+
+
+
+
+
+
+texto = input("Digite uma palavra: ")
+
+vetor = list(texto)
+
+vogais = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+
+contador = 0
+
+for letra in vetor:
+    if letra in vogais:
+        contador += 1
+
+print("Número de vogais na palavra:",  contador)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Cria um vetor vazio
+contador2 = int(input('escolha um valor que pode ser alterado'))
+contador = 0
+vetor = []
+
+# Lê 10 valores inteiros do usuário
+for i in range(10):
+    numero = int(input(f"Digite o {i+1}º número inteiro: "))
+    vetor.append(numero)
+
+while contador <= contador2:
+    print("Vetor atual:", vetor)
+
+    # Pede o novo valor
+    N = int(input("Digite o novo valor (N): "))
+
+    # Pede o índice e valida
+    indice = int(input("Digite o índice (0 a 9) que deseja alterar: "))
+
+    if 0 <= indice < 10:
+        vetor[indice] = N  # Atualiza o valor no índice especificado
+    else:
+        print("Índice inválido. Tente novamente.")
+        continue
+
+    contador =+ 1
+    # Exibe o vetor atualizado
+    print("Vetor atualizado:", vetor)
+
+
+print("---------------------------------------------------")
+print("vetor final", vetor)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import random
+
+vetor = random.sample(range(1,60),6)
+vetor2 =[]
+vetor3 = []
+
+for i in range(6):
+    a = int(input('insira sua aposta - numeros de 1 ate 60'))
+    vetor2.append(a)
+
+for numero in vetor:
+    if numero in vetor2:
+        vetor3.append(numero)
+
+print('--------------------------------------------------------')
+print(f'aposta da mega-sena correta: {vetor}')
+print(f'sua aposta {vetor2} voce acertou {len(vetor3)} numeros')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Cria um vetor vazio
+vetor = []
+
+# Lê 10 valores inteiros do usuário
+for i in range(4):
+    numero = int(input(f"Digite o {i+1}º número inteiro: "))
+    vetor.append(numero)
+
+numeros = sum(vetor) // 4
+
+
+# Exibe o conteúdo do vetor
+print("--------------------------")
+print("Conteúdo do vetor:")
+for i in range(4):
+    print(f"Posição {i}: {vetor[i]}")
+    print(numeros)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    vetor1=[]#armazenar os numeros dos trouxas
+vetor2=[]#par
+vetor3=[]#impar
+
+for i in range(5):
+    numero = int(input(f"Digite o {i+1}º número inteiro: "))
+    vetor1.append(numero)
+
+for numero in vetor1:
+    if numero % 2 == 0:
+        vetor2.append(numero)
+    if numero % 2 != 0:
+        vetor3.append(numero)
+
+soma1 = sum(vetor1)
+soma2 = sum(vetor2)
+soma3 = sum(vetor3)
+
+
+print(f'os numeros escolhidos são {vetor1} ,e a soma desses valores são: {soma1}')
+print(f'os numeros pares são: {vetor2} ,e a soma desses valores são:{soma2}')
+print(f'os numeros impares são: {vetor3} ,e a soma desses valores são:{soma3}')
+
+
+
+
+
+
+
+
+
+
+
+
+import random
+
+vetor = random.sample(range(1,101),100)
+print('Não Ordenado', vetor)
+print('-----------------------------------------------------------------------------------')
+vetor.sort()
+print('Ordenado', vetor)
