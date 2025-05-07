@@ -1,0 +1,55 @@
+import random
+continuar = True
+
+while continuar:
+    #Lista de palavras (você pode trocar por times, países, etc.)
+    palavras = ['brasil', 'argentina', 'uruguai', 'paraguai', 'chile', 'colombia', 'peru',
+    'venezuela', 'equador', 'bolivia', 'mexico', 'canada', 'estadosunidos',
+    'alemanha', 'franca', 'italia', 'espanha', 'portugal', 'inglaterra',
+    'japao', 'china', 'coreiasul', 'australia', 'india', 'russia', 'egito']
+
+# Sorteia a palavra secreta
+    palavra_secreta = random.choice(palavras)
+
+# Inicializa variáveis
+    vidas = 4
+    letras_usadas = []
+    letras_corretas = ['_' for _ in palavra_secreta]
+
+    print("🎯 Bem-vindo ao Jogo da Forca!")
+    print("Dica: Times Brasileiros.")
+
+# Loop do jogo
+    while vidas > 0 and '_' in letras_corretas:
+        print("\nPalavra: ", ' '.join(letras_corretas))
+        print(f"❤️ Vidas restantes: {vidas}")
+        print("Letras já usadas:", ' '.join(letras_usadas))
+
+        letra = input("Digite uma letra: ").lower()
+
+    # Verifica se já foi usada
+        if letra in letras_usadas:
+            print("Você já tentou essa letra. Tente outra.")
+            continue
+
+        letras_usadas.append(letra)
+
+        if letra in palavra_secreta:
+            print("✅ Letra correta!")
+            for i in range(len(palavra_secreta)):
+                if palavra_secreta[i] == letra:
+                    letras_corretas[i] = letra
+        else:
+            print("❌ Letra incorreta.")
+            vidas -= 1
+
+# Resultado final
+    if '_' not in letras_corretas:
+        print("\n🎉 Parabéns! Você acertou a palavra:", palavra_secreta)
+    else:
+        print("\n💀 Fim de jogo! A palavra era:", palavra_secreta)
+
+    opcao = input('Deseja continuar (s/n): ')
+    if opcao != 's':
+        continuar = False
+        print('-----------------------------------------------------------------------------------------------------------------')
